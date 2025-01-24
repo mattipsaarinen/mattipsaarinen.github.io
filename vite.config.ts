@@ -10,7 +10,7 @@ export default defineConfig({
       targets: [
         {
           src: "src/data/snapshots",
-          dest: "data/snapshots",
+          dest: "data",
         },
       ],
     }),
