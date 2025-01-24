@@ -1,8 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 #root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 4rem; /* Increased horizontal padding */
   text-align: center;
+  margin-left: 320px; /* Space for the drawer */
+  transition: margin-left 0.3s ease;
+  width: calc(100% - 320px); /* Ensure content width adjusts with drawer */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Add this class to handle drawer closed state */
+#root.drawer-closed {
+  margin-left: 0;
+  width: 100%;
 }
 
 .logo {
@@ -39,4 +58,79 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.country-drawer button:hover {
+  background-color: var(--background-primary) !important;
+}
+
+.country-drawer input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+@media (max-width: 1920px) {
+  #root {
+    max-width: 1080px; /* Slightly smaller max-width for better proportions */
+  }
+}
+
+@media (max-width: 1440px) {
+  #root {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #root {
+    max-width: 760px;
+    padding: 2rem 3rem;
+  }
+}
+
+.drawer-toggle {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.drawer-toggle:focus {
+  outline: none !important;
+}
+
+.drawer-toggle::-moz-focus-inner {
+  border: 0;
+}
+
+.indicator-panel {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  color: white;
+  width: 300px;
+  margin: 1rem;
+}
+
+.indicator-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.indicator-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.indicator-item label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.indicator-item value {
+  font-weight: 500;
 }

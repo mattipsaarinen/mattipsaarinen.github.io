@@ -1,4 +1,10 @@
-export default [
+type CountryData = [
+  countryName: string,
+  locationId: string,
+  countryCode: string
+];
+
+const countryData: CountryData[] = [
   ["Afghanistan", "004", "AFG"],
   ["Åland Islands", "248", "ALA"],
   ["Albania", "008", "ALB"],
@@ -248,3 +254,5 @@ export default [
   ["Zambia", "894", "ZMB"],
   ["Zimbabwe", "716", "ZWE"],
 ];
+
+export default countryData;
